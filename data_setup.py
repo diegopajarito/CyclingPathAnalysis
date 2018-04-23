@@ -1,6 +1,8 @@
-##
-# This script loads and creates the variables that hold raw data
-# to be processed
+"""
+This script handles data access and creates the variables to be used in the scripts
+
+Author: Diego Pajarito
+"""
 
 #Setup
 import pandas as pd

@@ -1,3 +1,10 @@
+"""
+This script allow us to convert a list of coordinates into a string geometry
+It considers the information stored in the trips
+
+Author: Diego Pajarito
+"""
+
 import data_setup as data
 import geojson
 from geojson import FeatureCollection, Feature, LineString
@@ -21,7 +28,7 @@ def get_start_stop_linestring(point):
 
 
 def get_generic_linestring():
-    pt = (0,0)
+    pt = (0, 0)
     pt1 = (0.0001, 0.001)
     return LineString([pt, pt1])
 
@@ -83,7 +90,7 @@ def main():
 
 
     ftrc = FeatureCollection(ftrc_lines)
-    print("Trips Feature is valid: " + ftrc.is_valid)
+    print("Trips Feature is valid: " + str(ftrc.is_valid))
 
     with open('./output/trips.geojson', 'w') as outfile:
         geojson.dump(ftrc, outfile)
