@@ -12,7 +12,8 @@ from LatLon import LatLon, Latitude, Longitude
 from geojson import FeatureCollection, Feature, LineString
 import pandas as pd
 
-measurement = []
+location = data.getLocation()
+measurement = data.getMeasurement()
 
 
 def build_feature(ftr_geometry, ftr_properties):
@@ -37,6 +38,33 @@ def get_generic_linestring():
     return LineString([pt, pt1])
 
 
+def build_trip_feature(properties, points):
+    linestring = LineString(points)
+    if linestring.is_valid:
+        feature = build_feature(linestring, properties)
+    else:
+        if len(points) == 1:
+            ls = LineString(get_start_stop_linestring(points[0]))
+            feature = build_feature(ls, properties)
+            print ("trip with only one point: " + str(properties))
+        else:
+            ls = LineString(get_generic_linestring())
+            feature = build_feature(ls, properties)
+            print ("Trip with empty Linestring: " + str(properties))
+    return feature
+
+
+def build_segment_feature(properties, start_point, end_point):
+    ls = LineString([start_point, end_point])
+    if ls.is_valid:
+        feature = build_feature(ls, properties)
+    else:
+        ls = LineString(get_generic_linestring())
+        feature = build_feature(ls, properties)
+        print ("Segment with empty Linestring: " + str(properties))
+    return feature
+
+
 def get_distance(point1, point2):
     point1_coordinates = LatLon(Latitude(point1[1]), Longitude(point1[0]))
     point2_coordinates = LatLon(Latitude(point2[1]), Longitude(point2[0]))
@@ -45,20 +73,48 @@ def get_distance(point1, point2):
 
 
 def get_last_speed(device, time):
-    expression = 'device = %s and time_gps < %s' % (device, time)
-    measurement.query(expression)
-    return 1
+    values = measurement[measurement.measurement == 'speed']
+    values = values[measurement.device == device]
+    values = values[measurement.time_device < time]
+    if values.size > 1:
+        values_sort = values.sort_values('time_device', ascending=False)
+        value = values_sort['value'].iloc[0] * 3.6
+    else:
+        value = -1
+    return value
+
+
+def get_last_distance_a(device, time):
+    values = measurement[measurement.measurement == 'distance']
+    values = values[values.device == device]
+    values = values[values.time_device < time]
+    if values.size > 1:
+        values_sort = values.sort_values('time_device', ascending=False)
+        value = values_sort['value'].iloc[0]
+    else:
+        value = -1
+    return value
+
+
+def get_last_distance_b(device, time):
+    values = measurement[measurement.measurement == 'last_distance']
+    values = values[values.device == device]
+    values = values[values.time_device < time]
+    if values.size > 1:
+        values_sort = values.sort_values('time_device', ascending=False)
+        value = values_sort['value'].iloc[0]
+    else:
+        value = -1
+    return value
 
 
 def main():
-    mls_points = []
-    feature_lines = []
+    trip_points = []
+    feature_segments = []
+    feature_trips = []
     new_trip = True
     trip_count = 0
-    last_device = ''
 
-    location = data.getLocation()
-    measurement = data.getMeasurement()
     location_sort = location.sort_values(['device', 'time_gps'])
 
     for i, row in location_sort.iterrows():
@@ -69,71 +125,81 @@ def main():
         device = location['device'][i]
         timestamp = pd.to_datetime(location_sort['time_gps'][i])
         point = (lon, lat, alt)
-        speed = get_last_speed(device, timestamp)
 
         if new_trip:
             new_trip = False
-            trip_start = timestamp
+            segment_count = 1
             trip_count = trip_count + 1
+            trip_points.append(point)
 
+            segment_start = timestamp
+            trip_start = timestamp
             last_point = point
             last_device = device
             last_timestamp = timestamp
-            mls_points.append(point)
+
         else:
+
             distance = get_distance(last_point, point)
             time_difference_min = pd.Timedelta(timestamp - last_timestamp).total_seconds() / 60
+
             if distance > 500 or time_difference_min > 5 or last_device != device:
-                trip_end = timestamp
-                device = location_sort['device'][i]
-                properties = {'device': device, 'start_time': str(trip_start), 'end_time': str(trip_end),
-                              'trip_count': trip_count, 'point_count': len(mls_points)}
-                ls = LineString(mls_points)
-                if ls.is_valid:
-                    feature = build_feature(ls, properties)
-                else:
-                    if len(mls_points) == 1:
-                        ls = LineString(get_start_stop_linestring(last_point))
-                        feature = build_feature(ls, properties)
-                        print ("trip with only one point: " + str(device))
-                    else:
-                        ls = LineString(get_generic_linestring())
-                        feature = build_feature(ls, properties)
-                        print ("Trip with empty Linestring: " + str(device))
-                if feature:
-                    feature_lines.append(feature)
+                properties_trip = {'device': last_device, 'start_time': str(trip_start), 'end_time': str(last_timestamp),
+                                   'trip_count': trip_count, 'point_count': len(trip_points)}
+                feature_trip = build_trip_feature(properties_trip, trip_points)
+                if feature_trip:
+                    feature_trips.append(feature_trip)
 
-                new_trip = False
-                trip_start = timestamp
                 trip_count = trip_count + 1
-
+                trip_start = timestamp
+                trip_points = [point]
+                segment_start = timestamp
+                segment_count = 1
                 last_point = point
                 last_device = device
                 last_timestamp = timestamp
-                mls_points = [point]
 
             else:
-                mls_points.append(point)
+                last_distance_a = get_last_distance_a(device, location_sort['time_gps'][i])
+                last_distance_b = get_last_distance_b(device, location_sort['time_gps'][i])
+                last_speed = get_last_speed(device, location_sort['time_gps'][i])
+                speed_geometry = (distance / 1000) / (time_difference_min / 60)
+                # get last distance
+                properties_segment = {'device': device, 'start_time': str(segment_start), 'end_time': str(timestamp),
+                                      'segment_count': segment_count, 'distance_geometry': distance,
+                                      'last_distance_a': last_distance_a, 'last_distance_b': last_distance_b,
+                                      'speed_geometry': speed_geometry, 'last_speed': last_speed,
+                                      'trip_count': trip_count}
+                feature_segment = build_segment_feature(properties_segment, last_point, point)
+                if feature_segment:
+                    feature_segments.append(feature_segment)
+
+                trip_points.append(point)
+                segment_start = timestamp
+                segment_count = segment_count + 1
                 last_point = point
+                last_device = device
                 last_timestamp = timestamp
-                new_trip = False
+
+    # last point to build a trip
+    properties_trip = {'device': last_device, 'start_time': str(trip_start), 'end_time': str(last_timestamp),
+                       'trip_count': trip_count, 'point_count': len(trip_points)}
+    feature_trip = build_trip_feature(properties_trip, trip_points)
+    if feature_trip:
+        feature_trips.append(feature_trip)
 
 
+    feature_collection_trips = FeatureCollection(feature_trips)
+    print("Trips Feature collection is valid: " + str(feature_collection_trips.is_valid))
+    with open('./output/trips_tags.geojson', 'w') as outfile:
+        geojson.dump(feature_collection_trips, outfile)
 
-    crs_4326 = {
-        "type": "name",
-        "properties": {
-            "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
-        }
-    }
-
-
-    feature_collection = FeatureCollection(feature_lines)
-    print("Trips Feature is valid: " + str(feature_collection.is_valid))
-
-    with open('./output/trips_raw.geojson', 'w') as outfile:
-        geojson.dump(feature_collection, outfile)
+    feature_collection_segments = FeatureCollection(feature_segments)
+    print("Segments Feature collection is valid: " + str(feature_collection_segments.is_valid))
+    with open('./output/segments_raw.geojson', 'w') as outfile:
+        geojson.dump(feature_collection_segments, outfile)
 
 
 if __name__ == "__main__":
+
     main()
