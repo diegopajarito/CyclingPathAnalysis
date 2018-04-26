@@ -7,6 +7,7 @@ Author: Diego Pajarito
 """
 
 
+import pandas as pd
 import datetime
 import data_setup as data
 import geojson
@@ -14,16 +15,19 @@ from geojson import Feature, FeatureCollection
 trips_raw = data.getTripsRaw()
 trips_app = data.getTrips()
 tags = data.getTags()
-tags_polarity = data.getTagsPolarity()
+#tags_polarity = data.getTagsPolarity()
 
 
 def update_trip_properties(properties):
     start = properties['start_time']
     stop = properties['end_time']
+    trip_range = pd.date_range(start, stop)
     device = properties['device']
 
     trips_device = trips_app[trips_app.device == device]
-    if trips_device.size > 0:
+    if trips_device.size >0:
+        for td in trips_device:
+            trips_device_range = pd.date_range(td.trip_start, td.trip_stop)
         trip_app = trips_device[trips_device.trip_start > start]
         trip_app = trip_app[trip_app.trip_start < stop]
         if trip_app.size > 0:
