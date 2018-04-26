@@ -6,6 +6,7 @@ It just considers location, distance and time
 Author: Diego Pajarito
 """
 
+import datetime
 import data_setup as data
 import geojson
 from LatLon import LatLon, Latitude, Longitude
@@ -74,8 +75,8 @@ def get_distance(point1, point2):
 
 def get_last_speed(device, time):
     values = measurement[measurement.measurement == 'speed']
-    values = values[measurement.device == device]
-    values = values[measurement.time_device < time]
+    values = values[values.device == device]
+    values = values[values.time_device < time]
     if values.size > 1:
         values_sort = values.sort_values('time_device', ascending=False)
         value = values_sort['value'].iloc[0] * 3.6
@@ -123,6 +124,7 @@ def main():
         lon = location['longitude'][i]
         alt = location['altitude'][i]
         device = location['device'][i]
+        precision = location['precision'][i]
         timestamp = pd.to_datetime(location_sort['time_gps'][i])
         point = (lon, lat, alt)
 
@@ -163,13 +165,16 @@ def main():
                 last_distance_a = get_last_distance_a(device, location_sort['time_gps'][i])
                 last_distance_b = get_last_distance_b(device, location_sort['time_gps'][i])
                 last_speed = get_last_speed(device, location_sort['time_gps'][i])
-                speed_geometry = (distance / 1000) / (time_difference_min / 60)
+                if time_difference_min == 0:
+                    speed_geometry = 0
+                else:
+                    speed_geometry = (distance / 1000) / (time_difference_min / 60)
                 # get last distance
                 properties_segment = {'device': device, 'start_time': str(segment_start), 'end_time': str(timestamp),
                                       'segment_count': segment_count, 'distance_geometry': distance,
                                       'last_distance_a': last_distance_a, 'last_distance_b': last_distance_b,
                                       'speed_geometry': speed_geometry, 'last_speed': last_speed,
-                                      'trip_count': trip_count}
+                                      'precision_end': precision, 'trip_count': trip_count}
                 feature_segment = build_segment_feature(properties_segment, last_point, point)
                 if feature_segment:
                     feature_segments.append(feature_segment)
@@ -188,10 +193,9 @@ def main():
     if feature_trip:
         feature_trips.append(feature_trip)
 
-
     feature_collection_trips = FeatureCollection(feature_trips)
     print("Trips Feature collection is valid: " + str(feature_collection_trips.is_valid))
-    with open('./output/trips_tags.geojson', 'w') as outfile:
+    with open('./output/trips_raw.geojson', 'w') as outfile:
         geojson.dump(feature_collection_trips, outfile)
 
     feature_collection_segments = FeatureCollection(feature_segments)
@@ -199,7 +203,8 @@ def main():
     with open('./output/segments_raw.geojson', 'w') as outfile:
         geojson.dump(feature_collection_segments, outfile)
 
+    print("Processed %d points, finished at %s" % {location.size, str(datetime.datetime.now().time())})
 
 if __name__ == "__main__":
-
+    print ("Processing started at %s" % str(datetime.datetime.now().time()))
     main()
