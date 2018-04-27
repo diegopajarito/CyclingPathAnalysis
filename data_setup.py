@@ -8,7 +8,7 @@ Author: Diego Pajarito
 import pandas as pd
 
 file_trips = './data/Cyclist_Trip.csv'
-file_trips_raw = './output/trips_raw.geojson'
+file_trips_raw = './output/trips.geojson' #Change
 file_location = './data/Cyclist_Location.csv'
 file_measurement = './data/Cyclist_Measurement.csv'
 file_tags = './data/Cyclist_Tag.csv'
@@ -42,7 +42,7 @@ def getTags():
 
 
 def getTagsPolarity():
-    return pd.read_csv(file_tags_polarity, '\t')
+    return pd.read_csv(file_tags_polarity)
 
 
 if __name__ == "__main__":
