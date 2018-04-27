@@ -15,7 +15,7 @@ from geojson import Feature, FeatureCollection
 trips_raw = data.getTripsRaw()
 trips_app = data.getTrips()
 tags = data.getTags()
-#tags_polarity = data.getTagsPolarity()
+tags_polarity = data.getTagsPolarity()
 
 
 def update_trip_properties(properties):
