@@ -2,11 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="290d2089-b1dd-403e-b62c-703259a07e58" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data/__init__.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data_cleaning/__init__.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Point_to_Path.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/test.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/test.py" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/Location_metrics.py" afterPath="$PROJECT_DIR$/data_cleaning/a_location_metrics.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/data_setup.py" afterPath="$PROJECT_DIR$/data/data_setup.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/point_to_path_measurement.py" afterPath="$PROJECT_DIR$/data_cleaning/c_trips_raw_od.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/point_to_path_raw.py" afterPath="$PROJECT_DIR$/data_cleaning/b_trips_raw.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/trip_tags_processing.py" afterPath="$PROJECT_DIR$/data_cleaning/d_trip_tags_processing.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/Tags_polarity.csv" afterPath="$PROJECT_DIR$/data/Tags_polarity.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data_setup.py" afterPath="$PROJECT_DIR$/data_setup.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/segments.geojson" afterPath="$PROJECT_DIR$/output/segments.geojson" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/trips_raw.geojson" afterPath="$PROJECT_DIR$/output/trips_raw.geojson" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/trips_tags.geojson" afterPath="$PROJECT_DIR$/output/trips_tags.geojson" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/trip_tags_processing.py" afterPath="$PROJECT_DIR$/trip_tags_processing.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,62 +35,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="point_to_path_measurement.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/point_to_path_measurement.py">
+      <file leaf-file-name="a_location_metrics.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data_cleaning/a_location_metrics.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="191" column="67" lean-forward="true" selection-start-line="191" selection-start-column="67" selection-end-line="191" selection-end-column="67" />
+            <state relative-caret-position="120">
+              <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding>
-                <element signature="e#202#217#0" expanded="true" />
+                <element signature="e#212#247#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="trip_tags_processing.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/trip_tags_processing.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="764">
-              <caret line="76" column="26" lean-forward="true" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
-              <folding>
-                <element signature="e#295#314#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="trips_tags.geojson" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/output/trips_tags.geojson">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="393">
-              <caret line="0" column="501391" lean-forward="false" selection-start-line="0" selection-start-column="501391" selection-end-line="0" selection-end-column="501391" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="trips.geojson" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/output/trips.geojson">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="0" column="1563" lean-forward="false" selection-start-line="0" selection-start-column="1563" selection-end-line="0" selection-end-column="1563" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Cyclist_Tag.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/Cyclist_Tag.csv">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="592" column="92" lean-forward="false" selection-start-line="592" selection-start-column="84" selection-end-line="592" selection-end-column="92" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Tags_polarity.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/Tags_polarity.csv">
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -88,44 +57,66 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Cyclist_Trip.csv" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data/Cyclist_Trip.csv">
+      <file leaf-file-name="__init__.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="114" lean-forward="false" selection-start-line="0" selection-start-column="104" selection-end-line="0" selection-end-column="114" />
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="point_to_path_raw.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/point_to_path_raw.py">
+      <file leaf-file-name="d_trip_tags_processing.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data_cleaning/d_trip_tags_processing.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="80" column="31" lean-forward="false" selection-start-line="80" selection-start-column="21" selection-end-line="80" selection-end-column="31" />
+            <state relative-caret-position="310">
+              <caret line="52" column="39" lean-forward="true" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="c_trips_raw_od.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/data_cleaning/c_trips_raw_od.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="681">
+              <caret line="225" column="53" lean-forward="true" selection-start-line="225" selection-start-column="53" selection-end-line="225" selection-end-column="53" />
               <folding>
-                <element signature="e#202#227#0" expanded="true" />
+                <element signature="e#202#217#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="data_setup.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/data_setup.py">
+      <file leaf-file-name="pydevd.py" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="660">
-              <caret line="44" column="41" lean-forward="false" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
+            <state relative-caret-position="715">
+              <caret line="1590" column="0" lean-forward="false" selection-start-line="1590" selection-start-column="0" selection-end-line="1590" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="data_setup.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/data_setup.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="315">
+              <caret line="21" column="35" lean-forward="false" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="b_trips_raw.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data_cleaning/b_trips_raw.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-890">
+              <caret line="16" column="17" lean-forward="false" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+              <folding>
+                <element signature="e#202#216#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -141,11 +132,11 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>feature</find>
       <find>nan</find>
       <find>NaN</find>
       <find>47</find>
       <find>47</find>
+      <find>feature</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -164,13 +155,19 @@
         <option value="$PROJECT_DIR$/qgis/Trip_distances.py" />
         <option value="$PROJECT_DIR$/qgis/Location_metrics.py" />
         <option value="$PROJECT_DIR$/qgis/Location_Metrics.py" />
-        <option value="$PROJECT_DIR$/Location_metrics.py" />
-        <option value="$PROJECT_DIR$/Point_to_Path.py" />
         <option value="$PROJECT_DIR$/point_to_path_raw.py" />
-        <option value="$PROJECT_DIR$/point_to_path_measurement.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/data_setup.py" />
+        <option value="$PROJECT_DIR$/Point_to_Path.py" />
+        <option value="$PROJECT_DIR$/point_to_path_measurement.py" />
         <option value="$PROJECT_DIR$/trip_tags_processing.py" />
+        <option value="$PROJECT_DIR$/data_setup.py" />
+        <option value="$PROJECT_DIR$/Location_metrics.py" />
+        <option value="$PROJECT_DIR$/data_cleaning/a_location_metrics.py" />
+        <option value="$PROJECT_DIR$/data_cleaning/b_trips_raw.py" />
+        <option value="$PROJECT_DIR$/data_cleaning/c_trips_od.py" />
+        <option value="$PROJECT_DIR$/data_cleaning/d_trip_tags_processing.py" />
+        <option value="$PROJECT_DIR$/data/data_setup.py" />
+        <option value="$PROJECT_DIR$/data_cleaning/c_trips_raw_od.py" />
       </list>
     </option>
   </component>
@@ -218,7 +215,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="qgis" />
+              <option name="myItemId" value="output" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -232,7 +229,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="output" />
+              <option name="myItemId" value="data_cleaning" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -366,10 +363,13 @@
     </option>
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/data_cleaning" />
+      <recent name="$PROJECT_DIR$/data" />
+      <recent name="$PROJECT_DIR$/a_data_cleaning" />
       <recent name="$PROJECT_DIR$" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
@@ -498,25 +498,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.trip_tags_processing">
-    <configuration default="false" name="Trip_distances" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/qgis" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="CyclingPathAnalysis" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/qgis/Trip_distances.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.c_trips_raw_od">
     <configuration default="false" name="geometry_functions" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -535,55 +517,55 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="point_to_path_measurement" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="a_location_metrics" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data_cleaning" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="CyclingPathAnalysis" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/point_to_path_measurement.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_cleaning/a_location_metrics.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <method />
     </configuration>
-    <configuration default="false" name="point_to_path_raw" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/cyclist27/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="CyclingPathAnalysis" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/point_to_path_raw.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="trip_tags_processing" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration default="false" name="d_trip_tags_processing" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data_cleaning" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="CyclingPathAnalysis" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/trip_tags_processing.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_cleaning/d_trip_tags_processing.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="c_trips_raw_od" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/data_cleaning" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CyclingPathAnalysis" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_cleaning/c_trips_raw_od.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -665,7 +647,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="CyclingPathAnalysis" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Point_to_Path.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_cleaning/Point_to_Path.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -683,28 +665,26 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="CyclingPathAnalysis" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_setup.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/data_setup.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <method />
     </configuration>
-    <list size="7">
+    <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.Point_to_Path" />
-      <item index="1" class="java.lang.String" itemvalue="Python.Trip_distances" />
-      <item index="2" class="java.lang.String" itemvalue="Python.data_setup" />
-      <item index="3" class="java.lang.String" itemvalue="Python.geometry_functions" />
-      <item index="4" class="java.lang.String" itemvalue="Python.point_to_path_measurement" />
-      <item index="5" class="java.lang.String" itemvalue="Python.point_to_path_raw" />
-      <item index="6" class="java.lang.String" itemvalue="Python.trip_tags_processing" />
+      <item index="1" class="java.lang.String" itemvalue="Python.data_setup" />
+      <item index="2" class="java.lang.String" itemvalue="Python.geometry_functions" />
+      <item index="3" class="java.lang.String" itemvalue="Python.a_location_metrics" />
+      <item index="4" class="java.lang.String" itemvalue="Python.d_trip_tags_processing" />
+      <item index="5" class="java.lang.String" itemvalue="Python.c_trips_raw_od" />
     </list>
     <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.trip_tags_processing" />
-        <item index="1" class="java.lang.String" itemvalue="Python.point_to_path_measurement" />
-        <item index="2" class="java.lang.String" itemvalue="Python.point_to_path_raw" />
+      <list size="4">
+        <item index="0" class="java.lang.String" itemvalue="Python.c_trips_raw_od" />
+        <item index="1" class="java.lang.String" itemvalue="Python.d_trip_tags_processing" />
+        <item index="2" class="java.lang.String" itemvalue="Python.a_location_metrics" />
         <item index="3" class="java.lang.String" itemvalue="Python.geometry_functions" />
-        <item index="4" class="java.lang.String" itemvalue="Python.Trip_distances" />
       </list>
     </recent_temporary>
   </component>
@@ -743,7 +723,14 @@
       <option name="project" value="LOCAL" />
       <updated>1524820092618</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Updated the trip association with tags based on time overlapping">
+      <created>1524849116829</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1524849116829</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TodoView">
@@ -762,6 +749,7 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12595266" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32789317" sideWeight="0.50265414" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31722054" sideWeight="0.49734586" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32854986" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -769,13 +757,12 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28700906" sideWeight="0.4976798" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.48255116" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.48255116" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -796,7 +783,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="updated trips and measurement generation" />
     <MESSAGE value="first attempt to deal with tags and trips based on timestamps" />
-    <option name="LAST_COMMIT_MESSAGE" value="first attempt to deal with tags and trips based on timestamps" />
+    <MESSAGE value="Updated the trip association with tags based on time overlapping" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated the trip association with tags based on time overlapping" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -806,54 +794,59 @@
           <option name="timeStamp" value="39" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Point_to_Path.py</url>
-          <line>72</line>
-          <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Location_metrics.py</url>
-          <line>126</line>
+          <url>file://$PROJECT_DIR$/data_cleaning/a_location_metrics.py</url>
+          <line>134</line>
           <option name="timeStamp" value="56" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Location_metrics.py</url>
-          <line>124</line>
+          <url>file://$PROJECT_DIR$/data_cleaning/a_location_metrics.py</url>
+          <line>132</line>
           <option name="timeStamp" value="64" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Point_to_Path.py</url>
-          <line>91</line>
-          <option name="timeStamp" value="67" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/point_to_path_raw.py</url>
+          <url>file://$PROJECT_DIR$/data_cleaning/b_trips_raw.py</url>
           <line>120</line>
           <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/point_to_path_raw.py</url>
-          <line>8</line>
-          <option name="timeStamp" value="73" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/point_to_path_measurement.py</url>
-          <line>189</line>
+          <url>file://$PROJECT_DIR$/data_cleaning/c_trips_raw_od.py</url>
+          <line>207</line>
           <option name="timeStamp" value="84" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/point_to_path_measurement.py</url>
-          <line>170</line>
-          <option name="timeStamp" value="90" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/point_to_path_measurement.py</url>
-          <line>208</line>
-          <option name="timeStamp" value="91" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/trip_tags_processing.py</url>
-          <line>70</line>
+          <url>file://$PROJECT_DIR$/data_cleaning/d_trip_tags_processing.py</url>
+          <line>75</line>
           <option name="timeStamp" value="117" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/data_cleaning/a_location_metrics.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="122" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/data_cleaning/a_location_metrics.py</url>
+          <line>128</line>
+          <option name="timeStamp" value="125" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/data_cleaning/b_trips_raw.py</url>
+          <line>46</line>
+          <option name="timeStamp" value="126" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/data_cleaning/d_trip_tags_processing.py</url>
+          <line>68</line>
+          <option name="timeStamp" value="127" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/data_cleaning/b_trips_raw.py</url>
+          <line>128</line>
+          <option name="timeStamp" value="128" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/data_cleaning/d_trip_tags_processing.py</url>
+          <line>37</line>
+          <option name="timeStamp" value="129" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>
@@ -863,7 +856,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="119" />
+      <option name="time" value="131" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -887,14 +880,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/anaconda2/envs/Cyclist/lib/python2.7/site-packages/pandas/io/parsers.py" />
-    <entry file="file://$PROJECT_DIR$/data/Cyclist_ExperimentMS.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="144" lean-forward="false" selection-start-line="2" selection-start-column="120" selection-end-line="2" selection-end-column="144" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/qgis/geometry_functions.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -934,13 +919,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Point_to_Path.py">
+    <entry file="file://$PROJECT_DIR$/data_cleaning/Point_to_Path.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
           <caret line="45" column="131" lean-forward="false" selection-start-line="45" selection-start-column="131" selection-end-line="45" selection-end-column="131" />
-          <folding>
-            <element signature="e#159#184#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -951,13 +934,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Point_to_Path.py">
+    <entry file="file://$PROJECT_DIR$/data_cleaning/Point_to_Path.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#159#184#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -968,26 +949,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Point_to_Path.py">
+    <entry file="file://$PROJECT_DIR$/data_cleaning/Point_to_Path.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="8" column="10" lean-forward="false" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-          <folding>
-            <element signature="e#159#184#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/anaconda2/envs/Cyclist/lib/python2.7/site-packages/pandas/io/parsers.py" />
     <entry file="file://$USER_HOME$/anaconda2/envs/Cyclist/lib/python2.7/_strptime.py" />
     <entry file="file://$USER_HOME$/anaconda2/envs/Cyclist/lib/python2.7/json/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/data/test.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="5" lean-forward="false" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/Cyclist_Experiment_Nov22.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -1011,39 +983,12 @@
     </entry>
     <entry file="file://$USER_HOME$/anaconda2/envs/Cyclist/lib/python2.7/site-packages/pandas/core/generic.py" />
     <entry file="file://$USER_HOME$/anaconda2/envs/Cyclist/lib/python2.7/site-packages/pandas/core/series.py" />
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="1017" column="0" lean-forward="false" selection-start-line="1017" selection-start-column="0" selection-end-line="1017" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Library/Caches/PyCharmCE2017.1/python_stubs/-1655744662/pandas/_libs/tslib.py" />
     <entry file="file://$USER_HOME$/anaconda2/envs/Cyclist/lib/python2.7/site-packages/geojson/feature.py" />
     <entry file="file://$PROJECT_DIR$/qgis/Trip_distances.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="14" column="49" lean-forward="false" selection-start-line="14" selection-start-column="49" selection-end-line="14" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Location_metrics.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="492">
-          <caret line="102" column="0" lean-forward="false" selection-start-line="102" selection-start-column="0" selection-end-line="102" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Point_to_Path.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="76" selection-end-column="38" />
-          <folding>
-            <element signature="e#159#184#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1119,32 +1064,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data_setup.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="44" column="41" lean-forward="false" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/point_to_path_raw.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="80" column="31" lean-forward="false" selection-start-line="80" selection-start-column="21" selection-end-line="80" selection-end-column="31" />
-          <folding>
-            <element signature="e#202#227#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/anaconda2/envs/Cyclist/lib/python2.7/json/encoder.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="293">
@@ -1179,26 +1098,100 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/output/trips_tags.geojson">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="393">
+        <state relative-caret-position="-60552">
           <caret line="0" column="501391" lean-forward="false" selection-start-line="0" selection-start-column="501391" selection-end-line="0" selection-end-column="501391" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/trip_tags_processing.py">
+    <entry file="file://$PROJECT_DIR$/data/test.csv">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="764">
-          <caret line="76" column="26" lean-forward="true" selection-start-line="76" selection-start-column="26" selection-end-line="76" selection-end-column="26" />
+        <state relative-caret-position="15">
+          <caret line="1" column="5" lean-forward="false" selection-start-line="1" selection-start-column="5" selection-end-line="1" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_cleaning/Point_to_Path.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="372">
+          <caret line="63" column="50" lean-forward="false" selection-start-line="63" selection-start-column="40" selection-end-line="63" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_cleaning/a_location_metrics.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding>
-            <element signature="e#295#314#0" expanded="true" />
+            <element signature="e#212#247#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/point_to_path_measurement.py">
+    <entry file="file://$PROJECT_DIR$/data_cleaning/b_trips_raw.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="520">
-          <caret line="191" column="67" lean-forward="true" selection-start-line="191" selection-start-column="67" selection-end-line="191" selection-end-column="67" />
+        <state relative-caret-position="-890">
+          <caret line="16" column="17" lean-forward="false" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+          <folding>
+            <element signature="e#202#216#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/data_setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="35" lean-forward="false" selection-start-line="21" selection-start-column="27" selection-end-line="21" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_cleaning/d_trip_tags_processing.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="52" column="39" lean-forward="true" selection-start-line="52" selection-start-column="39" selection-end-line="52" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="715">
+          <caret line="1590" column="0" lean-forward="false" selection-start-line="1590" selection-start-column="0" selection-end-line="1590" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data_cleaning/c_trips_raw_od.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="681">
+          <caret line="225" column="53" lean-forward="true" selection-start-line="225" selection-start-column="53" selection-end-line="225" selection-end-column="53" />
           <folding>
             <element signature="e#202#217#0" expanded="true" />
           </folding>
