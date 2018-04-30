@@ -111,8 +111,8 @@ def get_last_distance_b(device, time):
     return value
 
 
-def build_od_feature(device, time, type, trip, point):
-    ftr_properties = {'device': device, 'timestamp': time, 'type': type, 'trip_count': trip}
+def build_od_feature(device, time, od, trip, point):
+    ftr_properties = {'device': device, 'timestamp': str(time), 'type': od, 'trip_count': trip}
     ftr_geometry = Point(point)
     feature = Feature(properties=ftr_properties, geometry=ftr_geometry)
     return feature
