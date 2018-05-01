@@ -1,11 +1,11 @@
 """
 This script uses the python qgis libraries to perform geospatial analysis
-It takes a grid and counts the number of trips happening at each spot
+It takes a grid and counts the number of objects intersecting at each spot
 
 Layers should be on the same projection
 You should provide a polygon layer for the grid. provide a name grid_lyr_name
 The grid layer must have an attribute for the count. provide count_attribute
-You should provide a polyline layer for the trips. provide a name trips_lyr_name
+You should provide a vector layer for the trips and the name at trips_lyr_name
 
 Author: Diego Pajarito
 """
@@ -36,7 +36,7 @@ for l in layers:
     elif l.name() == trips_lyr_name:
         lyr_trips = l
         lyr_trips_set = True
-        print ('trips: layer' + l.name())
+        print ('trips layer:' + l.name())
     else:
         print ('Layer excluded: ' + l.name())
 
