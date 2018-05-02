@@ -15,6 +15,7 @@ Author: Diego Pajarito
 # Qgis modules
 from qgis.core import *
 import qgis.utils
+import processing
 
 # Setup
 lyr_segments_set = False
@@ -22,7 +23,7 @@ lyr_objects_set = False
 segments_lyr_name = 'segments_cs'
 distance_field_name = 'd_bikepath'
 oid_field_name = 'id_bikepath'
-object_lyr_name = 'carrils_bici_2_2017_02'
+object_lyr_name = 'bikepaths_cs'
 field_d_idx = -1
 field_id_idx = -1
 max_distance = 0.0005
@@ -57,25 +58,35 @@ if lyr_segments_set & lyr_objects_set:
         lyr_segments.startEditing()
         print ('Getting the closest object and its distance')
         for s in lyr_segments.getFeatures():
-            geom_buffer = s.geometry().buffer(max_distance, -1)
+            # create a vector layer in memory to store the buffer
+            buffer_geom = s.geometry().buffer(max_distance, -1)
+            buffer_lyr = QgsVectorLayer("Polygon?crs=epsg:4326&index=yes", "temporal_buffer", "memory")
+            buffer_pr = buffer_lyr.dataProvider()
+            buffer_ftr = QgsFeature()
+            buffer_ftr.setGeometry(buffer_geom)
+            buffer_pr.addFeatures([buffer_ftr])
+            buffer_lyr.updateExtents()
+
+            # use the layer in memory to select objects
+            selection_parameters = {'INPUT': lyr_objects, 'INTERSECT': buffer_lyr, 'PREDICATE': 0, 'METHOD': 0}
+            processing.run("qgis:selectbylocation", selection_parameters)
+            print ('qgis:select executed')
             
-            for o in lyr_objects.getFeatures():
-                intersects = o.geometry().intersects(geom_buffer)
+            selected_count = lyr_objects.selectedFeatureCount()
+
+            
+            if selected_count > 0:
+                print ('segment: ' + str(s.id()) + ' has ' + str(selected_count) + ' objets closeby')
+                selectedList = lyr_objects.selectedFeatureIds()
+                for i in selectedList:
+                    lyr_segments.changeAttributeValue(s.id(), field_id_idx, i)
+                    print('segment: ' + str(s.id()) + ' updated with object id: ' + str(i))
+                    #distance = s.geometry().distance(i)
+                    
                 
-                if intersects:
-                    print ('intersects')
-                    intersection = o.geometry().intersection(geom_buffer)
-                    #select by location and iterate the selection to estimate d
-                    #distances
-                    print(intersection.asWkt())
-                    for i in intersection.getfeatures():
-                        distance = s.geometry().distance(i)
-                        id = i.id()
-                        print ('closest point found for segment ' + (s.id()))
-                        lyr_segments.changeAttributeValue(s.id(), field_d_idx, distance)
-                        lyr_segments.changeAttributeValue(s.id(), field_id_idx, i.id())
-                #else:
-                    #print('no closest point found for segment ' + str(s.id()))
+            else:
+                print ('no selected')
+            
             counter = counter + 1
             #if grid_counter % 1000 == 0:
             if counter > 100:

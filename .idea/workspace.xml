@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="290d2089-b1dd-403e-b62c-703259a07e58" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/r-scripts/exploratory_analysis.R" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/r-scripts/setup.R" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/temp/segments_cs.geojson" afterPath="$PROJECT_DIR$/data/temp/segments_cs.geojson" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/qgis/MappingPaths.qgs" afterPath="$PROJECT_DIR$/qgis/MappingPaths.qgs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/qgis/distance_analysis.py" afterPath="$PROJECT_DIR$/qgis/distance_analysis.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -68,14 +73,15 @@
         <option value="$PROJECT_DIR$/qgis/grid_analysis" />
         <option value="$PROJECT_DIR$/qgis/grid_analysis.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/qgis/distance_analysis.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
     <option name="x" value="1" />
-    <option name="y" value="18" />
+    <option name="y" value="24" />
     <option name="width" value="1641" />
-    <option name="height" value="1032" />
+    <option name="height" value="1329" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -101,6 +107,20 @@
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
             <PATH_ELEMENT USER_OBJECT="CyclingPathAnalysis">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="CyclingPathAnalysis">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="r-scripts">
               <option name="myItemId" value="" />
               <option name="myItemType" value="" />
             </PATH_ELEMENT>
@@ -231,11 +251,8 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/CyclingPathAnalysis.iml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/misc.xml</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/output/segments.geojson</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/qgis/grid_analysis.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/qgis/MappingPaths.qgs</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -243,9 +260,10 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/qgis/MappingPaths.qgd</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/qgis/MappingPaths.qgs</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/qgis/distance_analysis.py</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/data/bikepaths/bikepaths_cs.geojson</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/data/grids/grid_mt_50_wgs84.geojson</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/data/temp/segments_cs.geojson</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/data/temp/segments_mt.geojson</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -347,44 +365,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.grid_analysis">
-    <configuration name="Point_to_Path" type="PythonConfigurationType" factoryName="Python">
-      <module name="CyclingPathAnalysis" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/cyclist27/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_cleaning/Point_to_Path.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
-      <module name="CyclingPathAnalysis" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="a_location_metrics" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="CyclingPathAnalysis" />
+    <configuration default="false" name="a_location_metrics" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -395,14 +376,14 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CyclingPathAnalysis" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_cleaning/a_location_metrics.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
+      <method />
     </configuration>
-    <configuration name="c_trips_raw_od" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="CyclingPathAnalysis" />
+    <configuration default="false" name="c_trips_raw_od" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -413,14 +394,14 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CyclingPathAnalysis" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_cleaning/c_trips_raw_od.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
+      <method />
     </configuration>
-    <configuration name="d_trip_tags_processing" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="CyclingPathAnalysis" />
+    <configuration default="false" name="d_trip_tags_processing" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -431,32 +412,14 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CyclingPathAnalysis" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_cleaning/d_trip_tags_processing.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
+      <method />
     </configuration>
-    <configuration name="data_setup" type="PythonConfigurationType" factoryName="Python">
-      <module name="CyclingPathAnalysis" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/cyclist27/bin/python" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/data_setup.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="geometry_functions" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="CyclingPathAnalysis" />
+    <configuration default="false" name="geometry_functions" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -467,14 +430,14 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CyclingPathAnalysis" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/qgis/geometry_functions.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
+      <method />
     </configuration>
-    <configuration name="grid_analysis" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="CyclingPathAnalysis" />
+    <configuration default="false" name="grid_analysis" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -485,11 +448,30 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CyclingPathAnalysis" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/qgis/grid_analysis" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CyclingPathAnalysis" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
     </configuration>
     <configuration default="true" type="Tox" factoryName="Tox">
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -523,36 +505,77 @@
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
-      <module name="CyclingPathAnalysis" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
+      <envs />
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CyclingPathAnalysis" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;.&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method />
     </configuration>
-    <list>
-      <item itemvalue="Python.Point_to_Path" />
-      <item itemvalue="Python.data_setup" />
-      <item itemvalue="Python.geometry_functions" />
-      <item itemvalue="Python.a_location_metrics" />
-      <item itemvalue="Python.d_trip_tags_processing" />
-      <item itemvalue="Python.c_trips_raw_od" />
-      <item itemvalue="Python.grid_analysis" />
+    <configuration default="false" name="Point_to_Path" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/cyclist27/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CyclingPathAnalysis" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data_cleaning/Point_to_Path.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="data_setup" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="$USER_HOME$/anaconda3/envs/cyclist27/bin/python" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="CyclingPathAnalysis" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/data/data_setup.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <method />
+    </configuration>
+    <list size="7">
+      <item index="0" class="java.lang.String" itemvalue="Python.Point_to_Path" />
+      <item index="1" class="java.lang.String" itemvalue="Python.a_location_metrics" />
+      <item index="2" class="java.lang.String" itemvalue="Python.c_trips_raw_od" />
+      <item index="3" class="java.lang.String" itemvalue="Python.d_trip_tags_processing" />
+      <item index="4" class="java.lang.String" itemvalue="Python.data_setup" />
+      <item index="5" class="java.lang.String" itemvalue="Python.geometry_functions" />
+      <item index="6" class="java.lang.String" itemvalue="Python.grid_analysis" />
     </list>
     <recent_temporary>
-      <list>
-        <item itemvalue="Python.grid_analysis" />
-        <item itemvalue="Python.c_trips_raw_od" />
-        <item itemvalue="Python.d_trip_tags_processing" />
-        <item itemvalue="Python.a_location_metrics" />
-        <item itemvalue="Python.geometry_functions" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.grid_analysis" />
+        <item index="1" class="java.lang.String" itemvalue="Python.geometry_functions" />
+        <item index="2" class="java.lang.String" itemvalue="Python.d_trip_tags_processing" />
+        <item index="3" class="java.lang.String" itemvalue="Python.c_trips_raw_od" />
+        <item index="4" class="java.lang.String" itemvalue="Python.a_location_metrics" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -614,7 +637,14 @@
       <option name="project" value="LOCAL" />
       <updated>1525186386743</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Changes in the data processing of geospatial Data">
+      <created>1525252920044</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1525252920044</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView">
@@ -765,7 +795,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/anaconda2/envs/Cyclist/lib/python2.7/json/__init__.py" />
     <entry file="file://$USER_HOME$/anaconda2/envs/Cyclist/lib/python2.7/json/encoder.py" />
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1038,6 +1067,16 @@
         <state relative-caret-position="225">
           <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/qgis/distance_analysis.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="514">
+          <caret line="68" column="79" lean-forward="false" selection-start-line="68" selection-start-column="70" selection-end-line="68" selection-end-column="79" />
+          <folding>
+            <element signature="e#599#622#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
