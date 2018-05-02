@@ -5,3 +5,7 @@
 =======
 
 .idea/
+
+.idea/workspace.xml
+
+.idea/CyclingPathAnalysis.iml

@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="290d2089-b1dd-403e-b62c-703259a07e58" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/qgis/MappingPaths.qgd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qgis/MappingPaths.qgs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/qgis/distance_analysis.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/CyclingPathAnalysis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CyclingPathAnalysis.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/bikepaths/bikepaths_cs.geojson" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/grids/grid_mt_50_wgs84.geojson" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/segments.geojson" beforeDir="false" afterPath="$PROJECT_DIR$/output/segments.geojson" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/qgis/grid_analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/qgis/grid_analysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/qgis/MappingPaths.qgs" beforeDir="false" afterPath="$PROJECT_DIR$/qgis/MappingPaths.qgs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -25,7 +22,7 @@
     <favorites_list name="CyclingPathAnalysis" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -60,7 +57,6 @@
         <option value="$PROJECT_DIR$/qgis/Location_metrics.py" />
         <option value="$PROJECT_DIR$/qgis/Location_Metrics.py" />
         <option value="$PROJECT_DIR$/point_to_path_raw.py" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/Point_to_Path.py" />
         <option value="$PROJECT_DIR$/point_to_path_measurement.py" />
         <option value="$PROJECT_DIR$/trip_tags_processing.py" />
@@ -74,6 +70,7 @@
         <option value="$PROJECT_DIR$/data_cleaning/c_trips_raw_od.py" />
         <option value="$PROJECT_DIR$/qgis/grid_analysis" />
         <option value="$PROJECT_DIR$/qgis/grid_analysis.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -84,11 +81,10 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator proportions="" version="1">
+    <navigator currentView="Scope" currentSubView="Project Files" proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -99,7 +95,45 @@
             <path>
               <item name="CyclingPathAnalysis" type="b2602c69:ProjectViewProjectNode" />
               <item name="CyclingPathAnalysis" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CyclingPathAnalysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CyclingPathAnalysis" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="bikepaths" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CyclingPathAnalysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CyclingPathAnalysis" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="grids" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CyclingPathAnalysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CyclingPathAnalysis" type="462c0819:PsiDirectoryNode" />
+              <item name="output" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="CyclingPathAnalysis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CyclingPathAnalysis" type="462c0819:PsiDirectoryNode" />
               <item name="qgis" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="CyclingPathAnalysis" type="cbb8eebc:String" user="CyclingPathAnalysis" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="CyclingPathAnalysis" type="cbb8eebc:String" user="CyclingPathAnalysis" />
+              <item name="output" type="cbb8eebc:String" user="output" />
             </path>
           </expand>
           <select />
@@ -403,7 +437,21 @@
       <option name="project" value="LOCAL" />
       <updated>1525116828088</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Updates in the analysis of distances between segments and bikepaths&#10;Added Qgis map projects and layers to have a full dataset">
+      <created>1525214786449</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1525214786449</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Updates in the analysis of distances between segments and bikepaths&#10;Added Qgis map projects and layers to have a full dataset">
+      <created>1525215005801</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1525215005801</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TodoView">
@@ -416,18 +464,18 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="18" width="1366" height="750" extended-state="6" />
+    <frame x="0" y="18" width="1680" height="1032" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.238653" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23809524" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50265414" side_tool="true" weight="0.32789317" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49734586" weight="0.65522623" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.32930514" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.32854986" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49734586" weight="0.65522623" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4976798" weight="0.28700906" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4976798" weight="0.28700906" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -458,7 +506,8 @@
     <MESSAGE value="Updated the trip association with tags based on time overlapping" />
     <MESSAGE value="Uptades in project structure and generation of origin destination files" />
     <MESSAGE value="Changes in the data processing of geospatial Data" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changes in the data processing of geospatial Data" />
+    <MESSAGE value="Updates in the analysis of distances between segments and bikepaths&#10;Added Qgis map projects and layers to have a full dataset" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updates in the analysis of distances between segments and bikepaths&#10;Added Qgis map projects and layers to have a full dataset" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -640,17 +689,7 @@
     <entry file="file://$USER_HOME$/anaconda2/envs/Cyclist/lib/python2.7/site-packages/pandas/core/frame.py" />
     <entry file="file://$USER_HOME$/anaconda2/envs/Cyclist/lib/python2.7/site-packages/pandas/io/json/json.py" />
     <entry file="file://$USER_HOME$/anaconda2/envs/Cyclist/lib/python2.7/site-packages/pandas/core/dtypes/dtypes.py" />
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/anaconda2/envs/Cyclist/lib/python2.7/site-packages/pandas/core/indexes/base.py" />
-    <entry file="file://$PROJECT_DIR$/data/Tags_polarity.csv">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/Cyclist_Trip.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -682,14 +721,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/test.csv" />
-    <entry file="file://$PROJECT_DIR$/data/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/data_cleaning/Point_to_Path.py" />
     <entry file="file://$PROJECT_DIR$/test.py" />
-    <entry file="file://$PROJECT_DIR$/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/data_cleaning/a_location_metrics.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
@@ -731,9 +764,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/qgis/Location_Metrics.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/qgis/grid_analysis" />
     <entry file="file://$PROJECT_DIR$/data_cleaning/c_trips_raw_od.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -749,15 +779,19 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-132">
           <caret line="27" column="27" lean-forward="true" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
-          <folding>
-            <element signature="e#468#491#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/qgis/distance_analysis.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-288" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
+        </state>
       </provider>
     </entry>
   </component>
