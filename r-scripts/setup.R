@@ -9,9 +9,17 @@
 # Setup
 library(jsonlite)
 
-table_segments_cs <- fromJSON('data/temp/segments_cs.geojson')
-table_segments_cs <- table_segments_cs$features
-table_segments_cs <- data.frame(table_segments_cs$properties)
+table_segments <- fromJSON('output/segments_full.geojson')
+table_segments <- table_segments$features
+table_segments <- data.frame(table_segments$properties)
+
+table_grid <- fromJSON('output/grid_reduced.geojson')
+table_grid <- table_grid$features
+table_grid <- data.frame(table_grid$properties)
+table_grid$city <- 'none'
+table_grid[table_grid$id < 2000000,]$city = 'Castelló'
+table_grid[table_grid$id >= 2000000 & table_grid$id < 3000000,]$city = 'Münster'
+table_grid[table_grid$id >= 3000000,]$city = 'Malta'
 
 table_trip_app <- read.csv('data/Cyclist_Trip.csv')
 

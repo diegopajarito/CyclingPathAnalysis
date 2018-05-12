@@ -10,8 +10,52 @@
 source('r-scripts/setup.R')
 library(ggplot2)
 
-table_segments_cs$in_bikepath = FALSE
-table_segments_cs[is.na(table_segments_cs$id_bikepath), ]$in_bikepath = TRUE
+
+
+# Going deep into frictions
+table_grid[which(is.na(table_grid$n_origin)),]$n_origin = 0 # if there are no origin 
+table_grid[which(is.na(table_grid$n_destination)),]$n_destination = 0
+
+table_grid$has_od = 'Not having origin or destination'
+table_grid[table_grid$n_origin>0 | table_grid$n_destination,]$has_od = 'Having origin or destination'
+
+ggplot(table_grid, aes(n_trips, n_segments)) + 
+  geom_point(alpha = 1/5, aes(size = n_segments_l_5kmh )) + 
+  geom_abline(intercept = 0, color = 'grey') +
+  xlab('Trips') + ylab('Segments') +
+  theme_bw() + theme(legend.position = 'bottom') + labs(size='Number of segments with walking speed or below 5 Km/h') + 
+  facet_grid(city ~ has_od)
+
+
+
+p_seg <- ggplot(table_grid, aes(n_trips, n_segments_l_5kmh / n_trips, color = city)) + 
+  geom_point()
+ggplot(table_grid, aes(n_segments, n_segments_l_5kmh/n_segments, color = city)) + 
+  geom_point() + facet_grid(city ~ .)
+
+ggplot(table_grid, aes(n_segments, n_cycling_segments/n_segments, color = city)) + 
+  geom_point() + facet_grid(city ~ .)
+
+ggplot(table_grid, aes(n_segments_l_5kmh, n_cycling_segments, color = city)) + 
+  geom_point() + facet_grid(city ~ .) + xlim(0,100)
+
+ggplot(table_grid, aes(n_trips, n_segments, color = city)) + 
+  geom_point() + facet_grid(city ~ .)
+
+mean(table_grid$n_segments, na.rm = TRUE)
+mean(table_grid[table_grid$n_segments_l_5kmh>0,]$n_segments_l_5kmh, na.rm = FALSE)
+mean(table_grid[table_grid$n_cycling_segments>0,]$n_cycling_segments, na.rm = FALSE)
+
+
+
+
+
+
+ggplot(table_segments, aes(day_of_the_week, y = distance_geometry / 1000)) +  geom_bar( stat = 'sum')
+
+
+#table_segments_cs$in_bikepath = FALSE
+#table_segments_cs[is.na(table_segments_cs$id_bikepath), ]$in_bikepath = TRUE
 # Histogram based on geometry
 ggplot(table_segments_cs, aes(speed_geometry, fill = in_bikepath)) + geom_histogram(binwidth = 0.5) + xlim(-1,70)
 ggplot(table_segments_cs, aes(distance_geometry, fill = in_bikepath)) + geom_histogram(binwidth = 0.5) 

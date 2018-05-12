@@ -1,0 +1,68 @@
+--------
+--
+-- This script compiles a series of SQL commands using the spatial capabilities
+-- PostGIS and PostgreSQL to calculate the metrics that support the analysis
+-- to replicate this procedures you need to setup an spatial database
+-- following the structure described in the documentation
+-- This scripts are just indicative of the process followed
+-- Author: Diego Pajarito
+--
+------
+
+
+-- In the following commands we mostly use st_intersection for identifying
+-- overlapping objects and update segments
+
+update trips.segments s
+set in_fua = 1
+from aoi.fua f
+where st_intersects(s.geometry, f.geometry);
+
+update trips.segments s
+set in_umz = 1
+from aoi.umz u
+where st_intersects(s.geometry, u.geometry);
+
+
+-- Get the distante to the closest bike path and its identification
+
+select s.id id_segment, min(st_distance(s.geometry, b.geometry))
+from trips.segments s, infrastructure.bikepaths b
+where s.id < 10
+group by s.id
+
+select s.id, b.id, st_distance(s.geometry, b.geometry)
+from trips.segments s, infrastructure.bikepaths b
+where s.id < 5 and st_distance(s.geometry, b.geometry) = (select min(st_distance(s.geometry, bi.geometry))
+										   from infrastructure.bikepaths bi)
+
+explain
+update trips.segments s
+set closest_bikepath = d.bikepath_id,
+	distance_to_bikepath = (select min(di.bikepath_distance)
+							from trips.segment_bikepath_distance di
+						    where di.segment_id = s.id)
+from trips.segment_bikepath_distance d
+where s.id = d.segment_id and
+	d.bikepath_distance = (select min(di.bikepath_distance)
+							from trips.segment_bikepath_distance di
+						    where di.segment_id = s.id)
+
+-- This is the original query using st functions for identifying the closest bikepath
+-- due to performance constraints this query is replaced by a two steps procedure
+-- first a temporal table with distances between segments and bikepaths
+-- second the query above that updates the values based on the temporal table
+update trips.segments s
+set closest_bikepath = b.id,
+	distance_to_bikepath = st_distance(s.geometry, b.geometry)
+from infrastructure.bikepaths b
+where st_distance(s.geometry, b.geometry) = (select min(st_distance(s.geometry, bi.geometry))
+										   from infrastructure.bikepaths bi);
+
+
+limit 100
+
+
+select city, in_umz, count(*)
+from trips.segments
+group by city, in_umz;
