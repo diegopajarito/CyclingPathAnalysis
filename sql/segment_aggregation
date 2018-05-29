@@ -24,7 +24,7 @@ from aoi.umz u
 where st_intersects(s.geometry, u.geometry);
 
 
--- Get the distante to the closest bike path and its identification
+-- Get the distance to the closest bike path and its identification
 
 select s.id id_segment, min(st_distance(s.geometry, b.geometry))
 from trips.segments s, infrastructure.bikepaths b

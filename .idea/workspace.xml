@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="290d2089-b1dd-403e-b62c-703259a07e58" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sql/data_structure_setup.sql" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sql/segment_aggregation" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sql/trips_aggregation.sql" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/sql/frictions_description.sql" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/data/bikepaths/bikepaths_cs.geojson" afterPath="$PROJECT_DIR$/data/bikepaths/bikepaths_cs.geojson" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/output/segments_raw.geojson" afterPath="$PROJECT_DIR$/output/segments_raw.geojson" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/qgis/MappingPaths.qgs" afterPath="$PROJECT_DIR$/qgis/MappingPaths.qgs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/r-scripts/exploratory_analysis.R" afterPath="$PROJECT_DIR$/r-scripts/exploratory_analysis.R" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/r-scripts/setup.R" afterPath="$PROJECT_DIR$/r-scripts/setup.R" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sql/segment_aggregation" afterPath="$PROJECT_DIR$/sql/segment_aggregation" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -27,7 +22,38 @@
     <favorites_list name="CyclingPathAnalysis" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf>
+      <file leaf-file-name="segment_aggregation" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sql/segment_aggregation">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="318">
+              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="trips_aggregation.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sql/trips_aggregation.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="693">
+              <caret line="145" column="0" lean-forward="true" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="frictions_description.sql" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/sql/frictions_description.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="94" column="57" lean-forward="true" selection-start-line="94" selection-start-column="57" selection-end-line="94" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -80,13 +106,14 @@
         <option value="$PROJECT_DIR$/sql/trips_aggregation.sql" />
         <option value="$PROJECT_DIR$/sql/data_structure_setup.sql" />
         <option value="$PROJECT_DIR$/sql/segment_aggregation" />
+        <option value="$PROJECT_DIR$/sql/frictions_description.sql" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="541" />
-    <option name="y" value="42" />
-    <option name="width" value="1742" />
+    <option name="x" value="1013" />
+    <option name="y" value="26" />
+    <option name="width" value="1540" />
     <option name="height" value="1379" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -528,7 +555,14 @@
       <option name="project" value="LOCAL" />
       <updated>1525288417074</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Update in SQL spatial analysis, ggplot graphs and output datasets.">
+      <created>1526146208748</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1526146208748</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TodoView">
@@ -541,9 +575,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="541" y="42" width="1742" height="1379" extended-state="0" />
+    <frame x="1013" y="26" width="1540" height="1379" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18764706" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21495327" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32789317" sideWeight="0.50265414" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33953112" sideWeight="0.49734586" order="2" side_tool="false" content_ui="tabs" />
@@ -584,7 +619,8 @@
     <MESSAGE value="Uptades in project structure and generation of origin destination files" />
     <MESSAGE value="Changes in the data processing of geospatial Data" />
     <MESSAGE value="Updates with R scripts for data analysis" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updates with R scripts for data analysis" />
+    <MESSAGE value="Update in SQL spatial analysis, ggplot graphs and output datasets." />
+    <option name="LAST_COMMIT_MESSAGE" value="Update in SQL spatial analysis, ggplot graphs and output datasets." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -680,7 +716,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/anaconda2/envs/Cyclist/lib/python2.7/site-packages/pandas/io/parsers.py" />
     <entry file="file://$PROJECT_DIR$/data/Cyclist_ExperimentMS.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -923,27 +958,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sql/trips_aggregation.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="738">
-          <caret line="148" column="24" lean-forward="false" selection-start-line="148" selection-start-column="24" selection-end-line="148" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sql/segment_aggregation">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="28" column="44" lean-forward="true" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sql/data_structure_setup.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="678">
           <caret line="137" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="141" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -951,6 +969,29 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
           <caret line="28" column="21" lean-forward="false" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sql/segment_aggregation">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sql/trips_aggregation.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="145" column="0" lean-forward="true" selection-start-line="145" selection-start-column="0" selection-end-line="145" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sql/frictions_description.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="94" column="57" lean-forward="true" selection-start-line="94" selection-start-column="57" selection-end-line="94" selection-end-column="57" />
           <folding />
         </state>
       </provider>

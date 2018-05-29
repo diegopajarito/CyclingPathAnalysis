@@ -23,3 +23,6 @@ table_grid[table_grid$id >= 3000000,]$city = 'Malta'
 
 table_trip_app <- read.csv('data/Cyclist_Trip.csv')
 
+table_frictions <- fromJSON('output/frictions.geojson')
+table_frictions <- table_frictions$features
+table_frictions <- data.frame(table_frictions$properties)
