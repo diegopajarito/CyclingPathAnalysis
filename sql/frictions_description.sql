@@ -131,3 +131,9 @@ set n_destination = (select count(*)
 from trips.od o
 where o.type = 'destination' and
 	st_intersects(f.geometry, o.geometry);
+
+
+-- Create a view with the relevant frictions
+create or replace view grid.relevant_frictions as
+select fid, in_umz, in_fua, n_segments, n_trips, n_segments_l_5kmh, n_cycling_segments, city, area, geometry
+from grid.frictions;
