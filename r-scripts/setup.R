@@ -26,3 +26,7 @@ table_trip_app <- read.csv('data/Cyclist_Trip.csv')
 table_frictions <- fromJSON('output/frictions.geojson')
 table_frictions <- table_frictions$features
 table_frictions <- data.frame(table_frictions$properties)
+
+table_bike_paths <- fromJSON('output/bikepaths_trips.geojson')
+table_bike_paths <- table_bike_paths$features
+table_bike_paths <- data.frame(table_bike_paths$properties)

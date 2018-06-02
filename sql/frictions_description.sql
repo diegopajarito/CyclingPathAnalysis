@@ -1,7 +1,58 @@
 
 -- Data Management for describing frictions
 -- We start from the dissolved grid spots with proportion of
--- walking / cycling segments between 70% and 150%
+-- walking / cycling segments between 50% and 150%
+
+
+----------------------------------------------------------
+--- Second Attempt 
+----------------------------------------------------------
+
+-- Spatial aggregation of the places possibly having frictions
+-- A) the grid spots filling the different conditions
+drop materialized view grid.level3_places;
+create materialized view grid.level3_places as
+select *, round((n_segments_l_5kmh * 100.0 / n_cycling_segments),2) intensity
+from grid.grid_reduced
+where n_segments_l_5kmh > 2 and
+	n_cycling_segments > 2 and
+	(n_segments_l_5kmh * 100.0 / n_cycling_segments) > 50.0 and
+	(n_segments_l_5kmh * 100.0 / n_cycling_segments) < 200.0 and
+	st_intersects(geometry, (select st_union(st_buffer(geometry, 0.00025))
+							 from trips.od)) = FALSE;
+	
+CREATE INDEX sidx_level3_places ON grid.level3_places USING gist (geometry);
+
+-- B) the aggregated spots
+drop materialized view grid.level3_places_agg;
+create materialized view grid.level3_places_agg as
+select (st_dump(st_union(geometry))).path[1] id, (st_dump(st_union(geometry))).geom geometry
+from grid.level3_places;
+CREATE INDEX sidx_level3_places_agg ON grid.level3_places_agg USING gist (geometry);
+
+-- C) Summary statistics of aggregated spots or frictions!!
+drop materialized view grid.frictions_level3;
+create materialized view grid.frictions_level3 as
+select a.id, count(g.*) n_grid_spots, 
+	round(avg(g.n_segments_l_5kmh),0) n_segments_l_5kmh,
+	round(avg(g.n_cycling_segments),0) n_cycling_segments,
+	round(avg(g.intensity),2) intensity,
+	round(avg(g.n_trips),0) n_trips,
+	round(avg(g.n_segments),0) n_segments,
+	max(g.city) city,
+	max(in_umz) in_umz,
+	a.geometry geometry
+from grid.level3_places_agg a, grid.level3_places g
+where ST_Contains(a.geometry, g.geometry)
+group by a.id, a.geometry
+order by count(g.*);
+CREATE INDEX sidx_frictions_level3 ON grid.frictions_level3 USING gist (geometry);
+
+
+----------------------------------------------------------
+--- Firt Attempt 
+----------------------------------------------------------
+
 drop table grid.frictions;
 select * from grid.frictions;
 

@@ -43,7 +43,7 @@ mean(representative_frictions[representative_frictions$city == 'Valletta',]$inte
 
 table_frictions[representative_frictions$city == 'Münster',]$intensity
 table_frictions[representative_frictions$city == 'Castelló',]$intensity
-table_frictions[representative_frictions$city == 'Valletta',]$intensity
+table_frictions[representative_frictions$city == 'Valletta',c('intensity','id')]
 
 representative_frictions[representative_frictions$city == 'Münster',]$intensity
 representative_frictions[representative_frictions$city == 'Castelló',]$intensity

@@ -66,3 +66,105 @@ limit 100
 select city, in_umz, count(*)
 from trips.segments
 group by city, in_umz;
+
+
+
+drop view infrastructure.bikepaths_trips;
+
+create or replace view infrastructure.bikepaths_trips as
+select *, (select count(distinct(f.trip_count))
+		   from trips.segments f
+		   where distance_to_bikepath < 0.00025 and
+		  		f.closest_bikepath = b.id) as n_trips_in,
+		(select avg(f.speed_geometry)
+		   from trips.segments f
+		   where speed_geometry between 5 and 50 and
+		 		distance_to_bikepath < 0.00025 and
+		  		f.closest_bikepath = b.id) as avg_speed_in,
+		(select sum(f.distance_geometry)
+		   from trips.segments f
+		   where speed_geometry between 5 and 50 and
+		 		distance_to_bikepath < 0.00025 and
+		  		f.closest_bikepath = b.id) as distance_in,
+		case when id < 5000 then st_length(st_transform(geometry, 5243)) 
+			when id between 5000 and 6000 then st_length(st_transform(geometry, 25830)) 
+			else st_length(st_transform(geometry, 25830))
+		end path_length,
+		((select sum(f.distance_geometry)
+		   from trips.segments f
+		   where speed_geometry between 5 and 50 and
+		 		distance_to_bikepath < 0.00025 and
+		  		f.closest_bikepath = b.id) /
+			(select count(distinct(f.trip_count))
+		   from trips.segments f
+		   where distance_to_bikepath < 0.00025 and
+		  		f.closest_bikepath = b.id)) * 100.0 /
+		(case when id < 5000 then st_length(st_transform(geometry, 5243)) 
+			when id between 5000 and 6000 then st_length(st_transform(geometry, 25830)) 
+			else st_length(st_transform(geometry, 25830))
+		end) prop_cycled_distance
+from infrastructure.bikepaths b;
+
+update infrastructure.bikepaths
+set n_trips_in = 0
+select 
+where n_trips_in is null
+
+
+select *
+from infrastructure.bikepaths
+where n_trips_in is null
+
+
+select *
+from infrastructure.bikepaths_segments
+order by n_segments_in desc
+limit 20;
+
+
+
+
+
+
+
+
+
+
+drop view trips.trips_simple;
+create or replace view trips.trips_simple as
+select trip_count, device, start_time, end_time, st_simplify(geometry, 0.0003) geometry
+from trips.trips_raw
+where st_simplify(geometry, 0.0003) is not null and 
+	st_length(st_simplify(geometry, 0.0003)) > 0.01;
+	
+
+create table trips.segment_bikepath_distance_30m as
+select *
+from trips.segment_bikepath_distance
+where bikepath_distance < 0.00025
+
+select count(*)
+from trips.segment_bikepath_distance_30m
+	
+
+drop table infrastructure.bike_path_use_distance;
+create table infrastructure.bike_path_use_distance as
+select s.id * 10000 + p.id id, s.id segment_id, d.bikepath_distance, ST_ClosestPoint(p.geometry, s.geometry) geometry
+from trips.segment_bikepath_distance_30m d, trips.segments s, infrastructure.bikepaths p
+where d.bikepath_distance < 0.00025 and
+	d.segment_id = s.id and
+	d.bikepath_id = p.id;
+
+drop view infrastructure.bike_path_use;
+create table infrastructure.bike_path_use as
+select d.id, d.segment_id, d.bikepath_distance, d.geometry
+from infrastructure.bike_path_use_distance d
+where bikepath_distance = (select min(di.bikepath_distance)
+						   from infrastructure.bike_path_use_distance di
+						   where d.id = di.id);
+alter table infrastructure.bike_path_use add constraint bike_path_use_pkey primary key (id); 
+CREATE INDEX sidx_bike_path_use ON infrastructure.bike_path_use USING GIST (geometry);
+
+select id, st_asewkt(geometry) from infrastructure.bike_path_use;
+
+select * from pg_stat_activity where state = 'active';
