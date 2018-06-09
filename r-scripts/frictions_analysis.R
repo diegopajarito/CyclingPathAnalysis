@@ -12,42 +12,35 @@ library(lubridate)
 library(dplyr)
 
 # Frictions intensity
+# Figure 4
 table_frictions[table_frictions$city == 'Malta',]$city = 'Valletta'
-table_frictions$intensity = 0
-table_frictions$intensity = table_frictions$n_segments_l_5kmh * 100.0 / table_frictions$n_cycling_segments
-table_frictions$representative = 0
-table_frictions[table_frictions$n_segments_l_5kmh,]$representative = 1
+table_frictions$h_position <- 0
+table_frictions[table_frictions$city == 'Valletta',]$h_position = 1
+table_frictions[table_frictions$city == 'Castelló',]$h_position = -1
+mean_spots <- mean(table_frictions$n_grid_spots)
+mean_intensity <- mean(table_frictions$intensity)
 
-# Representative frictions are those with more than 5 walking segments
-representative_frictions = table_frictions[table_frictions$representative == 1,]
-mean_intensity = mean(representative_frictions$intensity)
-ggplot(table_frictions, aes(x = reorder(id, n_segments_l_5kmh * 100.0 / n_cycling_segments), 
-                            y = n_segments_l_5kmh * 100.0 / n_cycling_segments,
-                            fill = city)) +
-  geom_bar(stat = 'identity', aes(alpha = intensity / 2000 + representative)) +
-  geom_hline(yintercept = mean_intensity, linetype="dashed", size=1) +
-  coord_flip() +
-  theme_bw() + theme(axis.text.y = element_blank(), axis.ticks = element_blank(),
-                     panel.grid.major.y = element_line(colour = "white"),
-                     legend.position = 'bottom', legend.title = element_blank()) +
-  scale_alpha(guide = 'none') +
-  xlab('') + ylab('Friction intensity (%)') 
+ggplot(table_frictions, aes(n_grid_spots + 0.15 * h_position, intensity, color=city)) +
+  geom_point(alpha = 0.6, aes(size = n_trips)) +
+  geom_vline(xintercept = mean_spots, linetype = 'longdash', color = 'grey60') +
+  geom_hline(yintercept = mean_intensity, linetype = 'longdash', color = 'grey60') +
+  ylab('Friction intensity') + ylim(50,200) +
+  scale_x_discrete(name = 'Size of grid areass', limits=c('1','2','3','4','5','6','7')) +
+  labs(size='Trips', colour='') +
+  theme_bw() +
+  theme(legend.position = 'bottom', axis.ticks.x = element_blank()) 
 
-mean(table_frictions[table_frictions$city == 'Münster',]$intensity)
-mean(table_frictions[table_frictions$city == 'Castelló',]$intensity)
-mean(table_frictions[table_frictions$city == 'Valletta',]$intensity)
+top_right_q <- table_frictions[table_frictions$n_grid_spots > mean_spots & table_frictions$intensity > mean_intensity,]
+top_left_q <- table_frictions[table_frictions$n_grid_spots < mean_spots & table_frictions$intensity > mean_intensity,]
 
-mean(representative_frictions[representative_frictions$city == 'Münster',]$intensity)
-mean(representative_frictions[representative_frictions$city == 'Castelló',]$intensity)
-mean(representative_frictions[representative_frictions$city == 'Valletta',]$intensity)
+ggplot(top_right_q, aes(city)) + 
+  geom_bar() +
+  geom_label(stat = 'count', aes(label = ..count..))
 
-table_frictions[representative_frictions$city == 'Münster',]$intensity
-table_frictions[representative_frictions$city == 'Castelló',]$intensity
-table_frictions[representative_frictions$city == 'Valletta',c('intensity','id')]
+ggplot(top_left_q, aes(city)) + 
+  geom_bar() +
+  geom_label(stat = 'count', aes(label = ..count..))
 
-representative_frictions[representative_frictions$city == 'Münster',]$intensity
-representative_frictions[representative_frictions$city == 'Castelló',]$intensity
-representative_frictions[representative_frictions$city == 'Valletta',]$intensity
 
 
 # Trips distribution

@@ -13,18 +13,24 @@ library(ggplot2)
 
 
 # Going deep into frictions
+# Paper: Figure 1
 table_grid[which(is.na(table_grid$n_origin)),]$n_origin = 0 # if there are no origin 
 table_grid[which(is.na(table_grid$n_destination)),]$n_destination = 0
 
-table_grid$has_od = 'Not having origin or destination'
-table_grid[table_grid$n_origin>0 | table_grid$n_destination,]$has_od = 'Having origin or destination'
+table_grid$has_od = 'Yes'
+table_grid[table_grid$n_origin>0 | table_grid$n_destination,]$has_od = 'No'
 
-ggplot(table_grid, aes(n_trips, n_segments)) + 
-  geom_point(alpha = 1/5, aes(size = n_segments_l_5kmh )) + 
+cities <- c('Castelló' = 'Castelló',
+            'Münster' = 'Münster', 
+            'Malta' = 'Valletta')
+ggplot(table_grid, aes(n_trips, n_segments, color = has_od)) + 
+  geom_point(alpha = 0.5, aes(size = n_segments_l_5kmh )) + 
   geom_abline(intercept = 0, color = 'grey') +
   xlab('Trips') + ylab('Segments') +
-  theme_bw() + theme(legend.position = 'bottom') + labs(size='Number of segments with walking speed or below 5 Km/h') + 
-  facet_grid(city ~ has_od)
+  labs(size='Cycling segments', color = 'Has Origin/Destination') +
+  theme_bw() + theme(legend.position = 'bottom', legend.box = "vertical") +  
+  facet_grid(. ~ city, labeller = as_labeller(cities))
+
 
 
 

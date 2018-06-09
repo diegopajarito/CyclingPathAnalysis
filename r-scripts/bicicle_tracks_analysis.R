@@ -23,25 +23,20 @@ table_bike_paths[is.na(table_bike_paths$distance_in),]$distance_in <- 0
 table_bike_paths[is.na(table_bike_paths$prop_cycled_distance),]$prop_cycled_distance <- 0
 
 
-# Use of bicycle paths
-ggplot(table_bike_paths, aes(city, fill=having_trips)) +
-  geom_bar(stat = 'count', position = "fill", show.legend=F) +
-  geom_label(stat = 'count', position = 'fill', aes(label=..count..)) +
-  coord_flip() + xlab('') + ylab('Bicycle paths used during the experiment') +
-  theme_bw() +
-  theme(legend.position = 'bottom', legend.title = element_blank())
 
 # Average speed per city in/out bicycle 
 cycling_segments <- table_segments[table_segments$speed_geometry>5 & table_segments$speed_geometry<50,]
 cycling_segments <- cycling_segments[!is.na(cycling_segments$city),]
 cycling_segments[cycling_segments$city == 'Malta',]$city = 'Valletta'
-cycling_segments$in_bicycle_path = FALSE
-cycling_segments[!is.na(cycling_segments$distance_to_bikepath) & cycling_segments$distance_to_bikepath < 0.00025,]$in_bicycle_path = TRUE
+cycling_segments$in_bicycle_path = 'No'
+cycling_segments[!is.na(cycling_segments$distance_to_bikepath) & cycling_segments$distance_to_bikepath < 0.00025,]$in_bicycle_path = 'Yes'
 
 ggplot(cycling_segments, aes(in_bicycle_path, speed_geometry, fill=in_bicycle_path)) + 
-  geom_boxplot(alpha=0.7, outlier.shape = NA, show_guide=FALSE) + 
-  ylab('Speed') + xlab('') + ylim(0,40) +
+  geom_boxplot(alpha=0.7, outlier.shape = NA) + 
+  ylab('Speed (km/h)') + xlab('') + ylim(0,40) +
+  labs(fill = 'In bicycle path') +
   theme_bw() +
-  facet_grid(city ~ day_of_the_week)
+  theme(legend.position = 'bottom', axis.text.x=element_blank()) +
+  facet_grid(. ~ city)
 
   
