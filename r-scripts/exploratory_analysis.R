@@ -13,23 +13,27 @@ library(ggplot2)
 
 
 # Going deep into frictions
-# Paper: Figure 1
+# Paper: Figure 4
 table_grid[which(is.na(table_grid$n_origin)),]$n_origin = 0 # if there are no origin 
 table_grid[which(is.na(table_grid$n_destination)),]$n_destination = 0
 
-table_grid$has_od = 'Yes'
-table_grid[table_grid$n_origin>0 | table_grid$n_destination,]$has_od = 'No'
+table_grid$has_od = 'Without Origin / Destination'
+table_grid[table_grid$n_origin>0 | table_grid$n_destination>0,]$has_od = 'Has Origin or Destination'
 
 cities <- c('Castelló' = 'Castelló',
             'Münster' = 'Münster', 
             'Malta' = 'Valletta')
-ggplot(table_grid, aes(n_trips, n_segments, color = has_od)) + 
-  geom_point(alpha = 0.5, aes(size = n_segments_l_5kmh )) + 
-  geom_abline(intercept = 0, color = 'grey') +
-  xlab('Trips') + ylab('Segments') +
-  labs(size='Cycling segments', color = 'Has Origin/Destination') +
-  theme_bw() + theme(legend.position = 'bottom', legend.box = "vertical") +  
-  facet_grid(. ~ city, labeller = as_labeller(cities))
+ggplot(table_grid, aes(n_segments/n_trips, n_trips, color = has_od, shape = has_od)) + 
+  geom_point(alpha = 0.7) + 
+  scale_shape_manual(values=c(4, 20)) +
+  scale_size_manual(values=c(1.5, 0.5)) +
+  scale_x_continuous(breaks=c(3.0, 10.0, 20.0, 50.0, 100.0), labels=c('3x', '10x', '20x', '50x', '100x')) +
+  #geom_abline(intercept = 0, color = 'grey') +
+  ylab('Number of trips') + xlab('Segments per trip') +
+  #ylim(0,50) + xlim(0,50) +
+  labs(color='', shape='') +
+  theme_bw() + theme(legend.position = 'bottom', legend.box = "vertical", panel.grid.minor.x = element_blank()) +  
+  facet_grid(city ~ ., labeller = as_labeller(cities))
 
 
 

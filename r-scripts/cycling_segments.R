@@ -76,7 +76,7 @@ in_umz_ms <- 365 / (365+191)
 
 
 # Speed and hour of the day
-# Figure 6
+# Figure 3
 ggplot(table_segments[!is.na(table_segments$city) & table_segments$cycling_speed == 'b- Cycling speed',], 
        aes(start, speed_geometry)) + geom_point(alpha = 1/20) + 
   scale_x_discrete( limits=c(0,6,12,18,24)) +
@@ -84,6 +84,7 @@ ggplot(table_segments[!is.na(table_segments$city) & table_segments$cycling_speed
   xlab('Hour of day') + ylab('Speed in Km/h') +
   facet_grid(city ~ ., labeller = as_labeller(in_urban_zone_city))
 
+# Average cycling speed
 speed <- table_segments[c('city', 'cycling_speed', 'speed_geometry', 'in_bicycle_path')]
 speed <- speed[!is.na(speed$city) & speed$cycling_speed == 'b- Cycling speed',]
 speed %>%
@@ -92,18 +93,28 @@ speed %>%
 
 
 
-# Cycled distance in/out bicycle path
-
-trips <- table_segments[c('city', 'trip_count', 'distance_geometry', 'in_bicycle_path')]
+# Cycled distance in/out bicycle path per city
+# Figure 8
+trips <- table_segments[table_segments$cycling_speed == 'b- Cycling speed',c('city', 'trip_count', 'distance_geometry', 'in_bicycle_path')]
 trips <- trips[!is.na(trips$city),]
 trips[trips$city == 'Malta',]$city <- 'Valletta'
-ggplot(trips[trips$trip_count<1800,], aes(city, distance_geometry, group=trip_count)) +
-  geom_bar(stat='sum', position = 'dodge', aes(fill=in_bicycle_path)) +
+trips <- trips %>%
+  group_by(city, trip_count, in_bicycle_path) %>%
+  summarise(cycled_distance = sum(distance_geometry))
+bikepaths <- trips[trips$in_bicycle_path == 'Yes', c('city', 'trip_count', 'cycled_distance')]
+names(bikepaths) <- c('city', 'trip_count', 'distance_in_bikepath')
+bikepaths_out <- trips[trips$in_bicycle_path == 'No', c('city', 'trip_count', 'cycled_distance')]
+names(bikepaths_out) <- c('city', 'trip_count', 'distance_out_bikepath')
+trips <- merge(bikepaths, bikepaths_out)
+
+ggplot(trips, aes(reorder(trip_count, cycled_distance), cycled_distance/1000.0, fill = in_bicycle_path)) +
+  geom_bar(stat='identity', alpha = 0.7) +
   labs(fill = 'In bicycle Path') + guides(size = 'none') +
-  ylab('Distance (km)') +
-  theme_minimal() +
-  theme( axis.title.x = element_blank(), legend.position = 'bottom') +
-  coord_polar(start = 0)
+  ylab('Distance (Km)') +
+  theme( axis.title.x = element_blank(), axis.text.x=element_blank(), legend.position = 'bottom', axis.ticks.x = element_blank()) +
+  facet_grid(. ~ city)
+#+
+  #coord_polar(start = 0)
 
 
 
@@ -129,12 +140,20 @@ total_in_out$position <- 0
 total_in_out[total_in_out$city == 'Castelló',]$position <- -1
 total_in_out[total_in_out$city == 'Valletta',]$position <- 1
 
+
+# Cycled distance in bikepath per day
+# Figure 8
+
 ggplot(total_in_out, aes(day_of_the_week + 0.15 * position, percentage_in * 100, color = city))+
   geom_point(alpha=1/2,aes(size=total_distance/1000)) +
   labs(size = 'Cycled distance (Km)', color = '') + xlab('') + ylab('Distance in bicycle path (%)') +
   scale_x_discrete( limits=c(0,1,2,3,4,5,6), labels=c("S", "M", "T", "W", "T","F", "S")) +
   theme_bw() +
   theme(legend.position = 'bottom') 
+
+
+
+
 
 
 # Official Cycled Distances (just considering the cycling segments)
@@ -147,9 +166,16 @@ cycled_city <- total_in_out %>%
 
 
 
-
-
-
+# Official Number of segments and proportion of cycling segments
+segments_count <- table_segments[!is.na(table_segments$city),c('id', 'segment_count', 'device', 'trip_count', 'distance_geometry', 
+                                   'city', 'cycling_speed', 'in_bicycle_path')]
+segments_city <- segments_count %>%
+  group_by(city, cycling_speed) %>%
+  summarise(number_segments = n(),
+            distance = sum(distance_geometry, na.rm=TRUE))
+cycling_segments_ms = 5832 / (5356+5832+104+3433)
+cycling_segments_cs = 13898 / (6607+13898+286+4887)
+cycling_segments_mt = 5407 / (13384+5407+130+3644)
 
 
 

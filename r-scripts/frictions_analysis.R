@@ -12,7 +12,7 @@ library(lubridate)
 library(dplyr)
 
 # Frictions intensity
-# Figure 4
+# Figure 5
 table_frictions[table_frictions$city == 'Malta',]$city = 'Valletta'
 table_frictions$h_position <- 0
 table_frictions[table_frictions$city == 'Valletta',]$h_position = 1
@@ -25,7 +25,7 @@ ggplot(table_frictions, aes(n_grid_spots + 0.15 * h_position, intensity, color=c
   geom_vline(xintercept = mean_spots, linetype = 'longdash', color = 'grey60') +
   geom_hline(yintercept = mean_intensity, linetype = 'longdash', color = 'grey60') +
   ylab('Friction intensity') + ylim(50,200) +
-  scale_x_discrete(name = 'Size of grid areass', limits=c('1','2','3','4','5','6','7')) +
+  scale_x_discrete(name = 'Size of grid areas', limits=c('1','2','3','4','5','6','7')) +
   labs(size='Trips', colour='') +
   theme_bw() +
   theme(legend.position = 'bottom', axis.ticks.x = element_blank()) 
