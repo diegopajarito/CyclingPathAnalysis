@@ -110,11 +110,12 @@ trips <- merge(bikepaths, bikepaths_out)
 ggplot(trips, aes(reorder(trip_count, cycled_distance), cycled_distance/1000.0, fill = in_bicycle_path)) +
   geom_bar(stat='identity', alpha = 0.7) +
   labs(fill = 'In bicycle Path') + guides(size = 'none') +
+  scale_fill_manual(values=c("#ff3333", "#0ce90c")) +
   ylab('Distance (Km)') +
   theme( axis.title.x = element_blank(), axis.text.x=element_blank(), legend.position = 'bottom', axis.ticks.x = element_blank()) +
   facet_grid(. ~ city)
 #+
-  #coord_polar(start = 0)
+  #coord_polar(start = 0) #ff3333 0ce90c
 
 
 
