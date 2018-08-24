@@ -34,12 +34,14 @@ cycling_segments[!is.na(cycling_segments$distance_to_bikepath) & cycling_segment
 
 
 # Figure 10
+cycling_segments <- cycling_segments[cycling_segments$city != 'Valletta',]
 ggplot(cycling_segments, aes(in_bicycle_path, speed_geometry, fill=in_bicycle_path)) + 
   geom_boxplot(alpha=0.7, outlier.shape = NA) + 
   ylab('Speed (km/h)') + xlab('') + ylim(0,40) +
   labs(fill = 'In bicycle path') +
+  coord_flip() +
   theme_bw() +
-  theme(legend.position = 'bottom', axis.text.x=element_blank()) +
+  theme(legend.position = 'bottom', axis.text.y=element_blank()) +
   facet_grid(. ~ city)
 
   
