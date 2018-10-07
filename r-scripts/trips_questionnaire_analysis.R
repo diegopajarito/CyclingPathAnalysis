@@ -104,14 +104,15 @@ summary_trips[!is.na(summary_trips$dem_gender) & summary_trips$dem_gender == 2,]
 # General, average cycling speed versus distance cycled in a bicycle paths. 
 # Differences by city and gender
 
+summary_trips_cs_ms <- summary_trips[summary_trips$City == 'Münster' | summary_trips$City == 'Castelló',]
 ggplot(summary_trips_cs_ms[!is.na(summary_trips_cs_ms$gender),], 
        aes(bpath_distance/total_distance*100.0, cycling_speed, color = gender, size = cycling_distance/1000.0)) +
   geom_point(alpha=0.6) + 
-  ylab('Average cycling speed (Km/h)') + xlab('Cycled distance in a bicycle path per trip (%)') + 
+  ylab('Average cycling speed (Km/h)') + xlab('Distance cycled on a bicycle path per trip (%)') + 
   labs(color='', size = 'Cycled distance (Km)') +
   theme_bw() + theme(legend.position = 'bottom') + 
   facet_grid(.~City) 
-
+# ch5_tripsgender
 
 
 
@@ -145,7 +146,7 @@ pgender <- ggplot(summary_trips[!is.na(summary_trips$gender),], aes(engagement_A
                                                          color = gender, size = cycling_distance/1000.0)) +
   geom_point(alpha=0.6, position = "jitter") + 
   scale_x_discrete(limits=c(-3, -2, -1, 0, 1, 2, 3), labels=c('Very weak','','','','','','Very strong')) +
-  ylab('Cycled distance in Bicycle paths per trip (%)') + xlab('My intention to use an app while cycling is...') + 
+  ylab('Distance cycled on bicycle paths per trip (%)') + xlab('My intention to use an app while cycling is...') + 
   labs(color='', size = 'Cycled distance (Km)') +
   theme_bw() + theme(legend.position = 'bottom', axis.ticks.x = element_blank())
 
@@ -171,7 +172,7 @@ ggplot(summary_trips[!is.na(summary_trips$gaming_app_cycling),], aes(engagement_
                                                          color = gaming_app_cycling)) +
   geom_point(alpha=0.6, position = "jitter") + 
   scale_x_discrete(limits=c(-3, -2, -1, 0, 1, 2, 3), labels=c('Very weak','','','','','','Very strong')) +
-  ylab('Trip cycled distance (Km)') + xlab('My intention to use an application while cycling is...') + 
+  ylab('Distance cycled per trip (Km)') + xlab('My intention to use an application while cycling is...') + 
   ylim(0,20) +
   labs(color='Using Cyclists mobile Apps', size = 'Trip lenght (Km)') +
   theme_bw() + theme(legend.position = 'bottom', axis.ticks.x = element_blank())

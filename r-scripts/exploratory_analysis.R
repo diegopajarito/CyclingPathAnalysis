@@ -27,10 +27,10 @@ ggplot(table_grid, aes(n_segments/n_trips, n_trips, color = has_od, shape = has_
   geom_point(alpha = 0.7) + 
   scale_shape_manual(values=c(4, 20)) +
   scale_size_manual(values=c(1.5, 0.5)) +
-  scale_x_continuous(breaks=c(3.0, 10.0, 20.0, 50.0, 100.0), labels=c('3x', '10x', '20x', '50x', '100x')) +
+  scale_x_continuous(limits = c(0,25), breaks=c(0.0, 1.0, 2.0, 5.0, 10.0, 20.0), labels=c('0', '1x', '2x', '5x', '10x', '20x')) +
   #geom_abline(intercept = 0, color = 'grey') +
   ylab('Number of trips') + xlab('Segments per trip') +
-  #ylim(0,50) + xlim(0,50) +
+  ylim(0,50) + #xlim(0,25) +
   labs(color='', shape='') +
   theme_bw() + theme(legend.position = 'bottom', legend.box = "vertical", panel.grid.minor.x = element_blank()) +  
   facet_grid(city ~ ., labeller = as_labeller(cities))
